@@ -14,7 +14,7 @@ n
 
 Výstup bude formou obrázku (černá = neprostupná část, bílá = průchozí, červená = nejkratší cesta).
 
-Funcionality
+# Funcionality
 Implementovat načítání bludiště z CSV souboru
 Implementovat algoritmus pro hledání nejkratší cesty (mezi levým horním rohem a pravým dolním rohem) za použití knihovny NumPy,který bude pracovat v následujících dvou krocích:
 Sestavení incidenční matice
