@@ -1,25 +1,25 @@
 # Hledání nejkratší cesty v bludišti
 
-Tento projekt se zabývá řešením (hledáním nejkratší cesty) a také základním generováním bludišť. Základním vstupem bude bludiště 
-n
-×
-n
-, přičemž vstup do bludiště bude vždy levý horní roh a výstup bude vždy pravý dolní roh. Z jedné buňky do druhé se lze dostat pouze přes společnou hranu (nikoliv přes roh). Cílem projektu je implementovat algoritmy pro načítání, hledání nejkratší cesty a generování bludiště.
+## Popis projektu
+Tento projekt je součástí předmětu Vědecké výpočty v Pythonu a zaměřuje se na nalezení nejkratší cesty v bludišti pomocí algoritmu BFS. Bludiště je reprezentováno ve formě CSV souboru, kde `True` označuje neprůchozí cesta (zdi) a `False` průchozí cestu.
 
-Na začátku bude implementována funkce pro načítání bludiště z CSV souboru. Tato funkce bude umět načítat bludiště o libovolném rozměru 
-n
-×
-n
- a uložit ho do paměti v podobě NumPy matice s True/False hodnotami (True = buňka je neprůchozí). Poté bude implementován algoritmus pro hledání nejkratší cesty. Poslední částí bude vytvoření generátoru bludiště za použití algoritmu pro hledání nejkratší cesty.
+Startovací bod je vždy v levém horním rohu (`[0, 0]`) a cílový bod v pravém dolním rohu (`[n-1, n-1]`). Výstupem je obrázek (`.png`), kde:
+- Černá = zdi
+- Bílá = průchozí cesta
+- Červená = nalezená nejkratší cesta
 
-Výstup bude formou obrázku (černá = neprostupná část, bílá = průchozí, červená = nejkratší cesta).
+## Funkcionalita
+- Načítání bludiště z CSV souboru
+- Vyhledání nejkratší cesty pomocí BFS
+- Vykreslení cesty do barevného PNG obrázku
+- Podpora více bludišť (maze_1.csv až maze_5.csv)
 
-# Funcionality
-Implementovat načítání bludiště z CSV souboru
-Implementovat algoritmus pro hledání nejkratší cesty (mezi levým horním rohem a pravým dolním rohem) za použití knihovny NumPy,který bude pracovat v následujících dvou krocích:
-Sestavení incidenční matice
-Hledání nejkratší cesty např. pomocí Dijkstrova algoritmu (jsou i jiné možnosti jako hledání do šířky, výběr je na vás)
-Zapsat bludiště a nalezenou cestu do černobílého obrázku, kde cesta bude vyznačena červeně
-Vytvořit funkci pro generování bludiště tak, aby mělo řešení (tj. aby existovala cesta mezi levým horním a pravým dolním rohem)
-funkce začne s nějakou šablonou (předdefinované v kódu) a poté bude zaplňovat bludiště v náhodných místech a kontrolovat, zda je stále průchozí
-šablon bude více (např. empty = volné bludiště, slalom = bariéry aby cesta musela minimálně mít tvar S, ...) - budou s obrázky ukázané v Readme nebo examples.ipynb
+## Použité knihovny
+- `numpy`
+- `pandas`
+- `collections` (deque)
+- `PIL` (`Pillow`)
+
+## Spuštění souboru
+- Projekt umožňuje spustit buď jeden konkrétní soubor ručně (maze_1.csv), nebo automaticky zpracovat více bludišť (maze_1.csv až maze_5.csv). Stačí zakomentovat nebo odkomentovat příslušný blok v labirint.py.
+
