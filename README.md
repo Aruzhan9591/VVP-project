@@ -1,25 +1,73 @@
 # Hledání nejkratší cesty v bludišti
 
-## Popis projektu
-Tento projekt je součástí předmětu Vědecké výpočty v Pythonu a zaměřuje se na nalezení nejkratší cesty v bludišti pomocí algoritmu BFS. Bludiště je reprezentováno ve formě CSV souboru, kde `True` označuje neprůchozí cesta (zdi) a `False` průchozí cestu.
 
-Startovací bod je vždy v levém horním rohu (`[0, 0]`) a cílový bod v pravém dolním rohu (`[n-1, n-1]`). Výstupem je obrázek (`.png`), kde:
-- Černá = zdi
-- Bílá = průchozí cesta
-- Červená = nalezená nejkratší cesta
+## Popis projektu
+Tento projekt byl vytvořen v rámci předmětu **Vědecké výpočty v Pythonu**. Cílem je načíst bludiště ze souboru CSV, nalézt nejkratší cestu pomocí algoritmu **BFS (Breadth-First Search)** a vykreslit výsledek do obrázku. Program podporuje zpracování více bludišť najednou.
+
+Vstupem je 2D CSV matice, kde:
+- `True` = zeď (neprůchozí),
+- `False` = volná cesta (průchozí).
+
+Startovací bod je vždy v levém horním rohu `[0, 0]`, cílový bod je v pravém dolním rohu `[n-1, n-1]`.
+
+Výstupem je obrázek (`.png`), kde:
+- **Černá** = zdi  
+- **Bílá** = volné buňky  
+- **Červená** = nalezená nejkratší cesta
+
+---
 
 ## Funkcionalita
-- Načítání bludiště z CSV souboru
-- Vyhledání nejkratší cesty pomocí BFS
-- Vykreslení cesty do barevného PNG obrázku
-- Podpora více bludišť (maze_1.csv až maze_5.csv)
+
+- Načítání bludiště z CSV (`loader.py`)
+- Hledání nejkratší cesty pomocí BFS (`bfs_solver.py`)
+- Vykreslení cesty do PNG obrázku (`visualizer.py`)
+- Automatické zpracování více bludišť (`main.py`)
+- Výstup: obrázky `maze_1.png` až `maze_5.png`
+
+---
+
+## Struktura projektu
+
+- python_project/
+- ├── maze_lib/
+- │ ├── loader.py    # načtení CSV
+- │ ├── bfs_solver.py   # BFS algoritmus
+- │ ├── visualizer.py    # vykreslení PNG
+- ├── main.py    # hlavní spouštěcí soubor
+- ├── maze_1.csv až maze_5.csv
+- ├── maze_1.png až maze_5.png
+- ├── README.md
+
+---
 
 ## Použité knihovny
+
 - `numpy`
 - `pandas`
 - `collections` (deque)
-- `PIL` (`Pillow`)
+- `Pillow` (`PIL`)
 
-## Spuštění souboru
-- Projekt umožňuje spustit buď jeden konkrétní soubor ručně (maze_1.csv), nebo automaticky zpracovat více bludišť (maze_1.csv až maze_5.csv). Stačí zakomentovat nebo odkomentovat příslušný blok v labirint.py.
+---
+
+---
+
+## Poznámka k prostředí
+
+- Projekt je určen k běhu ve virtuálním prostředí (venv), zejména kvůli omezením v Pythonu 3.12
+
+- Pro spuštění doporučujeme:
+
+```bash
+# vytvoření virtuálního prostředí
+python3 -m venv venv
+
+# aktivace prostředí
+source venv/bin/activate
+
+# instalace závislostí
+pip install pandas pillow
+
+# spuštění hlavního souboru
+python main.py
 
