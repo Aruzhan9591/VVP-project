@@ -10,3 +10,9 @@ for i in range(1, 6):
     path = bfs(maze)
     generate_image(maze, path, out)
     print(f"[OK] {file_path} → {out}")
+
+# new generated maze
+generated_maze = generate_maze(size=20, density=0.3)
+generated_path = Bfs(generated_maze)
+generate_image(generated_maze, generated_path, "generated_maze.png")
+print("[OK] Generated random maze → generated_maze.png")
